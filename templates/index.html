@@ -9,6 +9,21 @@
     section {
         overflow-x : hidden;
     }
+    .cart-badge {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        background: #ef4444;
+        color: white;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: bold;
+    }
     </style>
 <body class="antialiased">
 
@@ -47,16 +62,367 @@
 
     {% include 'footer.html'%}
 
+    <!-- Floating Cart Button -->
+    <button id="cart-button" onclick="toggleCart()" class="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg transition-all hover:scale-110 z-50">
+        <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span id="cart-count" class="cart-badge hidden">0</span>
+    </button>
+
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+            <!-- Cart Header -->
+            <div class="flex items-center justify-between p-6 border-b">
+                <h2 class="text-2xl font-bold text-gray-800">Your Cart</h2>
+                <button onclick="toggleCart()" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Cart Items -->
+            <div id="cart-items" class="flex-1 overflow-y-auto px-4 py-3" style="max-height: 400px;">
+                <div class="flex flex-col items-center justify-center py-12">
+                    <svg class="w-16 h-16 text-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <p class="text-gray-500 font-medium">Your cart is empty</p>
+                    <p class="text-gray-400 text-sm mt-1">Add items to get started</p>
+                </div>
+            </div>
+
+            <!-- Cart Footer -->
+            <div id="cart-footer" class="hidden border-t p-6 space-y-4">
+                <!-- Discount Section -->
+                <div class="flex items-center gap-2">
+                    <input type="text" id="discount-code" placeholder="Enter discount code" class="flex-1 px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <button onclick="applyDiscount()" class="bg-gray-800 hover:bg-gray-900 text-white px-4 py-2 rounded-lg transition">Apply</button>
+                </div>
+                <div id="discount-message" class="text-sm hidden"></div>
+
+                <!-- Price Breakdown -->
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between text-gray-600">
+                        <span>Subtotal</span>
+                        <span id="subtotal">₹0</span>
+                    </div>
+                    <div id="discount-row" class="hidden flex justify-between text-green-600">
+                        <span>Discount</span>
+                        <span id="discount-amount">-₹0</span>
+                    </div>
+                    <div class="flex justify-between text-gray-600">
+                        <span>Delivery Fee</span>
+                        <span id="delivery-fee">₹40</span>
+                    </div>
+                    <div class="flex justify-between text-xl font-bold text-gray-800 pt-2 border-t">
+                        <span>Total</span>
+                        <span id="total">₹40</span>
+                    </div>
+                </div>
+
+                <!-- Payment Method -->
+                <div class="space-y-2">
+                    <p class="text-sm font-semibold text-gray-700">Payment Method</p>
+                    <div class="flex gap-2">
+                        <button onclick="selectPayment('cash')" class="payment-method flex-1 px-4 py-3 border-2 rounded-lg hover:border-red-500 transition" data-method="cash">
+                            <div class="flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                <span class="font-medium">Cash</span>
+                            </div>
+                        </button>
+                        <button onclick="selectPayment('card')" class="payment-method flex-1 px-4 py-3 border-2 rounded-lg hover:border-red-500 transition" data-method="card">
+                            <div class="flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                                </svg>
+                                <span class="font-medium">Card</span>
+                            </div>
+                        </button>
+                        <button onclick="selectPayment('upi')" class="payment-method flex-1 px-4 py-3 border-2 rounded-lg hover:border-red-500 transition" data-method="upi">
+                            <div class="flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                </svg>
+                                <span class="font-medium">UPI</span>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Checkout Button -->
+                <button onclick="checkout()" class="w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-4 rounded-lg transition">
+                    Place Order
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script>
+let cart = [];
+let selectedPayment = 'cash';
+let discountPercent = 0;
+const DELIVERY_FEE = 40;
+
 function loadCategory(category) {
   fetch(`/category/${category}`)
     .then(response => response.text())
     .then(html => {
       document.getElementById('product-container').innerHTML = html;
+      // Restore cart UI state after loading new category
+      restoreCartUI();
     })
     .catch(error => console.error("Error loading category:", error));
 }
+
+function addToCart(name, price, weight, imageUrl) {
+    const existingItem = cart.find(item => item.name === name);
+    
+    if (!existingItem) {
+        cart.push({ name, price, weight, imageUrl, quantity: 1 });
+    }
+    
+    // Toggle button visibility
+    const itemId = name.replace(/\s+/g, '-');
+    const addBtn = document.getElementById(`add-btn-${itemId}`);
+    const qtyControls = document.getElementById(`qty-controls-${itemId}`);
+    
+    if (addBtn) addBtn.classList.add('hidden');
+    if (qtyControls) qtyControls.classList.remove('hidden');
+    
+    updateCart();
+}
+
+function increaseQuantity(name) {
+    const item = cart.find(item => item.name === name);
+    if (item) {
+        item.quantity++;
+        updateQuantityDisplay(name, item.quantity);
+        updateCart();
+    }
+}
+
+function decreaseQuantity(name) {
+    const item = cart.find(item => item.name === name);
+    if (item) {
+        item.quantity--;
+        if (item.quantity <= 0) {
+            cart = cart.filter(i => i.name !== name);
+            // Show add button again
+            const itemId = name.replace(/\s+/g, '-');
+            const addBtn = document.getElementById(`add-btn-${itemId}`);
+            const qtyControls = document.getElementById(`qty-controls-${itemId}`);
+            
+            if (addBtn) addBtn.classList.remove('hidden');
+            if (qtyControls) qtyControls.classList.add('hidden');
+        } else {
+            updateQuantityDisplay(name, item.quantity);
+        }
+        updateCart();
+    }
+}
+
+function updateQuantityDisplay(name, quantity) {
+    const itemId = name.replace(/\s+/g, '-');
+    const qtySpan = document.getElementById(`qty-${itemId}`);
+    if (qtySpan) qtySpan.textContent = quantity;
+}
+
+function restoreCartUI() {
+    cart.forEach(item => {
+        const itemId = item.name.replace(/\s+/g, '-');
+        const addBtn = document.getElementById(`add-btn-${itemId}`);
+        const qtyControls = document.getElementById(`qty-controls-${itemId}`);
+        
+        if (addBtn) addBtn.classList.add('hidden');
+        if (qtyControls) {
+            qtyControls.classList.remove('hidden');
+            updateQuantityDisplay(item.name, item.quantity);
+        }
+    });
+}
+
+function updateCart() {
+    const cartCount = document.getElementById('cart-count');
+    const cartItems = document.getElementById('cart-items');
+    const cartFooter = document.getElementById('cart-footer');
+    
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    
+    if (totalItems > 0) {
+        cartCount.textContent = totalItems;
+        cartCount.classList.remove('hidden');
+    } else {
+        cartCount.classList.add('hidden');
+    }
+    
+    if (cart.length === 0) {
+        cartItems.innerHTML = `
+            <div class="flex flex-col items-center justify-center py-12">
+                <svg class="w-16 h-16 text-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+                <p class="text-gray-500 font-medium">Your cart is empty</p>
+                <p class="text-gray-400 text-sm mt-1">Add items to get started</p>
+            </div>
+        `;
+        cartFooter.classList.add('hidden');
+    } else {
+        cartFooter.classList.remove('hidden');
+        cartItems.innerHTML = cart.map(item => `
+            <div class="flex items-center justify-between py-3 border-b border-gray-100 hover:bg-gray-50 px-2 rounded transition">
+                <div class="flex-1">
+                    <div class="flex items-start justify-between">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-gray-800">${item.name}</h3>
+                            <p class="text-xs text-gray-500 mt-0.5">${item.weight}</p>
+                        </div>
+                        <button onclick="removeFromCart('${item.name}')" class="text-gray-400 hover:text-red-600 ml-3 transition" title="Remove item">
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="flex items-center justify-between mt-2">
+                        <div class="flex items-center gap-3">
+                            <div class="flex items-center border border-gray-300 rounded">
+                                <button onclick="decreaseQuantity('${item.name}')" class="px-2 py-1 hover:bg-gray-100 text-gray-600 transition">
+                                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M20 12H4" />
+                                    </svg>
+                                </button>
+                                <span class="px-3 py-1 text-sm font-medium text-gray-800 border-x border-gray-300 min-w-[2.5rem] text-center">${item.quantity}</span>
+                                <button onclick="increaseQuantity('${item.name}')" class="px-2 py-1 hover:bg-gray-100 text-gray-600 transition">
+                                    <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <span class="text-xs text-gray-500">₹${item.price} each</span>
+                        </div>
+                        <p class="font-semibold text-gray-900">₹${item.price * item.quantity}</p>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+        
+        updatePricing();
+    }
+}
+
+function removeFromCart(name) {
+    cart = cart.filter(item => item.name !== name);
+    
+    // Show add button again
+    const itemId = name.replace(/\s+/g, '-');
+    const addBtn = document.getElementById(`add-btn-${itemId}`);
+    const qtyControls = document.getElementById(`qty-controls-${itemId}`);
+    
+    if (addBtn) addBtn.classList.remove('hidden');
+    if (qtyControls) qtyControls.classList.add('hidden');
+    
+    updateCart();
+}
+
+function updatePricing() {
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const discountAmount = Math.round(subtotal * discountPercent / 100);
+    const total = subtotal - discountAmount + DELIVERY_FEE;
+    
+    document.getElementById('subtotal').textContent = `₹${subtotal}`;
+    document.getElementById('discount-amount').textContent = `-₹${discountAmount}`;
+    document.getElementById('delivery-fee').textContent = `₹${DELIVERY_FEE}`;
+    document.getElementById('total').textContent = `₹${total}`;
+    
+    if (discountAmount > 0) {
+        document.getElementById('discount-row').classList.remove('hidden');
+    } else {
+        document.getElementById('discount-row').classList.add('hidden');
+    }
+}
+
+function toggleCart() {
+    const modal = document.getElementById('cart-modal');
+    modal.classList.toggle('hidden');
+}
+
+function selectPayment(method) {
+    selectedPayment = method;
+    document.querySelectorAll('.payment-method').forEach(btn => {
+        if (btn.dataset.method === method) {
+            btn.classList.add('border-red-500', 'bg-red-50');
+        } else {
+            btn.classList.remove('border-red-500', 'bg-red-50');
+        }
+    });
+}
+
+function applyDiscount() {
+    const code = document.getElementById('discount-code').value.toUpperCase();
+    const message = document.getElementById('discount-message');
+    
+    const discountCodes = {
+        'SAVE10': 10,
+        'SAVE20': 20,
+        'FIRST50': 50
+    };
+    
+    if (discountCodes[code]) {
+        discountPercent = discountCodes[code];
+        message.textContent = `✓ ${discountPercent}% discount applied!`;
+        message.classList.remove('hidden', 'text-red-600');
+        message.classList.add('text-green-600');
+        updatePricing();
+    } else {
+        message.textContent = 'Invalid discount code';
+        message.classList.remove('hidden', 'text-green-600');
+        message.classList.add('text-red-600');
+    }
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+    }
+    
+    const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const discountAmount = Math.round(subtotal * discountPercent / 100);
+    const total = subtotal - discountAmount + DELIVERY_FEE;
+    
+    let orderDetails = 'Order Summary:\n\n';
+    cart.forEach(item => {
+        orderDetails += `${item.name} (${item.weight}) x${item.quantity} = ₹${item.price * item.quantity}\n`;
+    });
+    orderDetails += `\nSubtotal: ₹${subtotal}`;
+    if (discountAmount > 0) {
+        orderDetails += `\nDiscount: -₹${discountAmount}`;
+    }
+    orderDetails += `\nDelivery Fee: ₹${DELIVERY_FEE}`;
+    orderDetails += `\nTotal: ₹${total}`;
+    orderDetails += `\nPayment Method: ${selectedPayment.toUpperCase()}`;
+    
+    alert(orderDetails + '\n\nOrder placed successfully! You will receive a WhatsApp confirmation shortly.');
+    
+    // Clear cart
+    cart = [];
+    discountPercent = 0;
+    document.getElementById('discount-code').value = '';
+    document.getElementById('discount-message').classList.add('hidden');
+    updateCart();
+    toggleCart();
+    
+    // Restore UI
+    document.querySelectorAll('.add-button').forEach(btn => btn.classList.remove('hidden'));
+    document.querySelectorAll('.quantity-controls').forEach(ctrl => ctrl.classList.add('hidden'));
+}
+
+// Initialize payment method
+selectPayment('cash');
 </script>
     
 </body>

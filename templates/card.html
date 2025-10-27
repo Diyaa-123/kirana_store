@@ -13,16 +13,36 @@
         <p class="text-sm text-gray-500 mb-3">{{ cat['weight'] }}</p>
 
         <div class="flex items-center justify-between">
-          <span class="text-lg font-bold text-orange-600">{{ cat['cost_per_weight'] }} INR</span>
+          <span class="text-lg font-bold text-orange-600">₹{{ cat['cost_per_weight'] }}</span>
 
-          <button type="button"
-            class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+          <!-- Add Button (shown when item not in cart) -->
+          <button type="button" 
+            onclick="addToCart('{{ cat['name'] }}', {{ cat['cost_per_weight'] }}, '{{ cat['weight'] }}', '{{ cat['image_url'] }}')"
+            id="add-btn-{{ cat['name'] | replace(' ', '-') }}"
+            class="add-button inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
             <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
             </svg>
             Add
           </button>
+
+          <!-- Quantity Controls (hidden initially) -->
+          <div id="qty-controls-{{ cat['name'] | replace(' ', '-') }}" class="quantity-controls hidden flex items-center gap-2 bg-red-600 rounded-lg">
+            <button onclick="decreaseQuantity('{{ cat['name'] }}')"
+              class="text-white hover:bg-red-700 px-3 py-2 rounded-l-lg transition">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+              </svg>
+            </button>
+            <span id="qty-{{ cat['name'] | replace(' ', '-') }}" class="text-white font-medium min-w-[2rem] text-center">1</span>
+            <button onclick="increaseQuantity('{{ cat['name'] }}')"
+              class="text-white hover:bg-red-700 px-3 py-2 rounded-r-lg transition">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
     </div>

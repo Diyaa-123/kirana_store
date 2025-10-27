@@ -2,7 +2,7 @@ category = {
     "vegetables": [
         {
             "name": "Tomatoes",
-            "weight": "1 kg",
+            "weight": "0.5 kg",
             "cost_per_weight": 40,
             "image_url": "/static/images/tomatoes.jpg"
         },
@@ -14,13 +14,13 @@ category = {
         },
         {
             "name": "Onions",
-            "weight": "1 kg",
+            "weight": "0.5 kg",
             "cost_per_weight": 35,
             "image_url": "/static/images/onions.jpg"
         },
         {
             "name": "Potatoes",
-            "weight": "1 kg",
+            "weight": "0.5 kg",
             "cost_per_weight": 30,
             "image_url": "/static/images/potatoes.jpg"
         }
@@ -35,13 +35,13 @@ category = {
         },
         {
             "name": "Red Apples",
-            "weight": "1 kg",
+            "weight": "0.5 kg",
             "cost_per_weight": 120,
             "image_url": "/static/images/apple.jpg"
         },
         {
             "name": "Oranges",
-            "weight": "1 kg",
+            "weight": "0.5 kg",
             "cost_per_weight": 80,
             "image_url": "/static/images/oranges.jpg"
         }
@@ -50,7 +50,7 @@ category = {
     "dairy": [
         {
             "name": "Milk",
-            "weight": "1 L",
+            "weight": "0.5 L",
             "cost_per_weight": 60,
             "image_url": "/static/images/milk.jpg"
         },
