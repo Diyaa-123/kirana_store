@@ -1,67 +1,32 @@
-<div class="inline-flex gap-4">
-  <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm my-2">
-  <img class="rounded-t-lg w-full h-48 object-cover" src="/static/images/wheat.jpg" alt="" />
+<div class="container mx-auto px-4 py-6">
 
-  <div class="p-5">
-    <h5 class="mb-1 text-xl font-semibold text-gray-800">Wheat</h5>
-    <p class="text-sm text-gray-500 mb-3">1 kg</p>
+  <!-- Grid Wrapper (kept outside the loop) -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    
+    {% for cat in category %}
+    <!-- Product Card -->
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden hover:shadow-md transition">
+      <img class="w-full h-48 object-cover" src="{{ cat['image_url'] }}" alt="{{ cat['name'] }}">
 
-    <div class="flex items-center justify-between">
-      <span class="text-lg font-bold text-orange-600">40   INR</span>
+      <div class="p-5">
+        <h5 class="text-xl font-semibold text-gray-800">{{ cat['name'] }}</h5>
+        <p class="text-sm text-gray-500 mb-3">{{ cat['weight'] }}</p>
 
-      <button type="button" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-4 py-2 rounded-lg">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
-        </svg>
-        Add
-      </button>
+        <div class="flex items-center justify-between">
+          <span class="text-lg font-bold text-orange-600">{{ cat['cost_per_weight'] }} INR</span>
+
+          <button type="button"
+            class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
+            </svg>
+            Add
+          </button>
+        </div>
+      </div>
     </div>
+    {% endfor %}
+
   </div>
 </div>
-
-
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm my-2">
-  <img class="rounded-t-lg w-full h-48 object-cover" src="/static/images/rice.jpeg" alt="" />
-
-  <div class="p-5">
-    <h5 class="mb-1 text-xl font-semibold text-gray-800">Rice</h5>
-    <p class="text-sm text-gray-500 mb-3">1 kg</p>
-
-    <div class="flex items-center justify-between">
-      <span class="text-lg font-bold text-orange-600">180 INR</span>
-
-      <button type="button" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-4 py-2 rounded-lg">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
-        </svg>
-        Add
-      </button>
-    </div>
-  </div>
-</div>
-
-
-<div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm my-2">
-  <img class="rounded-t-lg w-full h-48 object-cover" src="/static/images/toor-dal.jpg" alt="" />
-
-  <div class="p-5">
-    <h5 class="mb-1 text-xl font-semibold text-gray-800">Toor Dal</h5>
-    <p class="text-sm text-gray-500 mb-3">1 kg</p>
-
-    <div class="flex items-center justify-between">
-      <span class="text-lg font-bold text-orange-600">120 INR</span>
-
-      <button type="button" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-4 py-2 rounded-lg">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"/>
-        </svg>
-        Add
-      </button>
-    </div>
-  </div>
-</div>
-
-
-
-</div>
-
