@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify, session
-from src.database.db_json import category
+from src.database.product_catelog import category
 from datetime import timedelta
 import secrets
 from src.routes.page_route import page_bp
@@ -16,6 +16,7 @@ app.register_blueprint(page_bp)
 app.register_blueprint(api_bp)
 # ==================== ERROR HANDLERS ====================
 app.register_blueprint(error_bp)
+
 
 if __name__ == "__main__":
     app.run(debug=True)

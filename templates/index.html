@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GrapeStore</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+        <title>GrapeStore</title>
+        {% include 'base_head.html' %}
     <style>
-    section {
+
+    body {
         overflow-x : hidden;
     }
     .cart-badge {
@@ -27,24 +28,32 @@
     </style>
 <body class="antialiased">
 
-<!-- Hero Section -->
-<div class="flex flex-col justify-end p-6 bg-[url('/static/images/hero-kirana.jpg')] bg-cover bg-center min-h-[350px]">
-  <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4">
-      Fresh Kirana Store
-  </h1>
-  <div class="text-lg text-white">
-      <span>Order fresh groceries online via Whatsapp</span>
-  </div>
-  <div class="text-lg text-white">
-      <span>+91 9999999999 Your Neighborhood</span>
-  </div>
-</div>
+
+    <!-- header -->
+    {% include 'navigations/header.html' %}
 
 <!-- Categories -->
 <div class="container mx-auto px-4">
   <div class="mb-4 text-2xl font-extrabold">Categories</div>
 
-  <div class="flex flex-wrap gap-2">
+  <!-- Search Bar -->
+    <label class="flex items-center w-full max-w-md mt-3 md:mt-0 py-1 ">
+      <div class="flex w-full rounded-lg bg-[#f1f4f0]">
+        <span class="pl-4 text-[#6b8961] flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+            <path
+              d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+            </path>
+          </svg>
+        </span>
+        <input
+          placeholder="Search"
+          class="form-input flex-1 bg-[#f1f4f0] text-[#131811] placeholder-[#6b8961] px-3 py-3 rounded-r-lg focus:outline-none"
+        />
+      </div>
+    </label>
+
+  <div class="flex flex-wrap gap-2 my-2">
     <button class="px-4 py-2 text-sm font-medium bg-white border rounded-lg hover:bg-gray-100" onclick="loadCategory('all')">All</button>
     <button class="px-4 py-2 text-sm font-medium bg-white border rounded-lg hover:bg-gray-100" onclick="loadCategory('vegetables')">Vegetables</button>
     <button class="px-4 py-2 text-sm font-medium bg-white border rounded-lg hover:bg-gray-100" onclick="loadCategory('fruits')">Fruits</button>
@@ -60,7 +69,8 @@
 
     </div>
 
-    {% include 'footer.html'%}
+    <!-- footer -->
+    {% include 'navigations/footer.html'%}
 
     <!-- Floating Cart Button -->
     <button id="cart-button" onclick="toggleCart()" class="fixed bottom-6 right-6 bg-red-600 hover:bg-red-700 text-white rounded-full w-16 h-16 flex items-center justify-center shadow-lg transition-all hover:scale-110 z-50">

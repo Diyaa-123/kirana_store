@@ -1,0 +1,49 @@
+<header class="flex flex-wrap items-center justify-between border-b border-[#f1f4f0] px-4 py-3 md:px-8 lg:px-10">
+  <!-- Logo Section -->
+  <div class="flex items-center gap-3 md:gap-4 text-[#131811]">
+    <div class="size-5 md:size-6">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"
+          fill="currentColor"
+        ></path>
+      </svg>
+    </div>
+    <a href="/" class="text-[#131811] text-lg font-bold tracking-tight">Kirana Store</a>
+  </div>
+
+  <!-- Hamburger (Mobile) -->
+  <button id="menu-btn" class="md:hidden text-[#131811] focus:outline-none">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+  </button>
+
+  <!-- Nav & Search -->
+  <div id="menu" class="hidden w-full md:flex md:w-auto md:items-center md:gap-8 mt-3 md:mt-0 flex-col md:flex-row">
+    <nav class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
+      <!-- <a class="text-[#131811] text-sm font-medium" href="/">Categories</a>
+      <a class="text-[#131811] text-sm font-medium" href="/deals">Deals</a>
+      <a class="text-[#131811] text-sm font-medium" href="/new_arrivals">New Arrivals</a> -->
+    </nav>
+
+    
+  </div>
+
+  <a href="/profile"
+        class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 flex items-center justify-center h-10 w-10 bg-[#f1f4f0] rounded-lg text-[#131811]"
+        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOXMSdT8caR94grHWVSAku4hpIM26uE6XOl4Wcsjcy8gnTLgzf9m-BeF3n6OOXRR2T-eF2_682cAb3s57UF_nog3JtkFkezAFKZwFLE0Q30rQJDwK4OdC1TZddR1q8PYI6CciYGMSlx4_eQPOcpZ6rxC2P7x18e5S6L7Ecx7Lw4uOb23Mo9YUSiVSkvHC49Nzw96F038WeOdswE9KOXnDVW32WUxj10kjFmeXv2R5u4mC4Yd9QPuA-3-qFSz0DEw65avv7L7hBybw");'
+      ></a>
+
+    </div>
+      
+</header>
+
+<!-- Script for mobile menu -->
+<script>
+  document.getElementById('menu-btn').addEventListener('click', function() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+  });
+</script>

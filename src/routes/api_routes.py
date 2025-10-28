@@ -1,5 +1,5 @@
 from flask import Blueprint, session, jsonify, request
-from src.database.db_json import category
+from src.database.product_catelog import category
 import secrets
 
 api_bp = Blueprint('api_bp', __name__, static_folder='static', template_folder='templates')

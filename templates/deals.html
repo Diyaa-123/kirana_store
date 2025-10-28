@@ -1,0 +1,196 @@
+<html>
+  <head>
+    <title>Deals | GrapeStore</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    {% include 'base_head.html' %}
+  </head>
+  <body>
+  <div class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden">
+      <div class=" flex flex-wrap h-full grow flex-col">
+    
+        <!-- header -->
+    {% include 'navigations/header.html' %}
+
+        <div class="px-40 flex flex-1 justify-center py-5">
+          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p class="text-[#181411] tracking-light text-[32px] font-bold leading-tight min-w-72">Current Deals &amp; Promotions</p>
+            </div>
+            <div class="@container">
+              <div class="@[480px]:px-4 @[480px]:py-3">
+                <div
+                  class="bg-cover bg-center flex flex-col justify-end overflow-hidden bg-white @[480px]:rounded-lg min-h-[218px]"
+                  style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 25%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAgBpYtufjykBsGrYFooGMChTz0Ela8qyfozB-7g0gEVLb2wgZsQnkNG1n28XUIWdY-2N8lX-J_GA69UD1lwWLRtaZzqntZ1Epf4BZsnDqkay5r0r71UYiNAzmMxTCFGZumlKSqqsOEFE5sG76LChXleY36__HYQEhDF8MMkOyUU2LvDLkjYSF6gf6BVtSb7mUfm8p00fRRzGoUW9GR2brRhRsNO57L6H6ns7iXCE4crcUdX9-LgT5gOieeoxYGBK-2rMZ3NuiHi0s");'
+                >
+                  <div class="flex p-4"><p class="text-white tracking-light text-[28px] font-bold leading-tight">Big Savings on Your Favorite Brands</p></div>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Featured Deals</h2>
+            <div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+              <div class="flex items-stretch p-4 gap-3">
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAC-beaVHvfhJ9BjnqU3_n5lqPRtHKYV33xIQNdlSWo0GxSNRMcZtEmK4F0BMS_M_QORReB1Q6EHtXI0l8auJdkxWIzX_N0qumFRyWzj0iTcvOdyOZtQHY_soolCuBzXT5sb09WV7SOfawsQ-Jppm2GihBR2b8HNLsSFgAPGkFaIvmn36AZ87YuGT75LdiC41uOCByY4vjYyUGOqz70YBELbz-RWGpnFMwLdeSMGy2bpzt95CqWc7Lvy-hZ64YkFg3-bEfBkrB5ogI");'
+                  ></div>
+                  <div>
+                    <p class="text-[#181411] text-base font-medium leading-normal">Up to 40% off on Spices</p>
+                    <p class="text-[#8a7260] text-sm font-normal leading-normal">Stock up on your favorite spices</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBM8j4WqChPEgUoa0Mwl3GAEvUWV_3t4HUY9CmOJh8tyMonB89tfTHOBjfT8MieXmCYsH84_dklZlOn3p4fk8bujOR3zhmmq_DDHpaOWtE__Z2-QNZA3ac9Z_mAooAbmMjKfBs6uzGfY_WZGx8CNaQL6wN3L7cw-N7lBY6sGuQ71rhp-PP6Sn5oWRQSdvsdpvJBp5OZm-FKMu9pKZ3rRNYwsEDO9YNsBJ6iaRd5PX61wd5TWX5E9euTpK9IYNRcPCVqxMGDbqQDeEU");'
+                  ></div>
+                  <div>
+                    <p class="text-[#181411] text-base font-medium leading-normal">25% off on all Snacks</p>
+                    <p class="text-[#8a7260] text-sm font-normal leading-normal">Enjoy your favorite snacks at a discounted price</p>
+                  </div>
+                </div>
+                <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60">
+                  <div
+                    class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg flex flex-col"
+                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4N2dGelgJjNlCpsKneao1YykenODOXqTIHxUg7u2KVaMimkH74GYZBTDMLlPc8VFQpDQPT2BY5-LlE2F6nEKzxFy0KWemYopEJxg1C4BziqX8G_IttD4eB-nRoG8NHMQkPEYPCdOHM5fBBTennR6i2LMGYLrupa8C7aU87yfhQK0bRSi2N_X7mJf1WwDxUyjKyQP7UwKx7gEGt9IffRF23szP7mWRpYJiWwOAFFx8oVRgRY7QBeUi0taqO2ErsXmqBD97u_8rSBM");'
+                  ></div>
+                  <div>
+                    <p class="text-[#181411] text-base font-medium leading-normal">Special Offer on Lentils</p>
+                    <p class="text-[#8a7260] text-sm font-normal leading-normal">Get the best quality lentils at a great price</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <h2 class="text-[#181411] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">All Deals</h2>
+            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAX9usaGcOdg3VZTBmhdRFbcJb_Qj6Pp8JTIs3kjskU2TLdaajmG_U3fYRuOAF0cKGjpLN3XSnWwdG5VSCu2MJiQD65QwoSSnUpMz6a79HxoYyu_utxV4ZNomDr1yZl-ztC6-I6uU5KT5IU4GwtwFYozMUrm1JERsrquJS6wSNgihhN9pG-jwDFEfw5Qj3WqQ1p-M8gXjXkHjfizWiofwkNZ7CTplumVsk1ARDFTTj05BGLZ-bdBT6BcJS9fXO4HPhY7WUKHiD-Fe8");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Basmati Rice</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Premium quality, aromatic rice</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuClweM_1238d0aMmof0GeB5ww7zfKuazMaofHO4XV5p4iHrz_oa5QgbmnwhhsXoUH2-_ly49nVqoVf5NQCRVBVhRuih6dk29_fqiWWyJ07Raju4LfO5FTjkgWzyNMfKRTg8NHl7PQVxzVBU9W1D6nu71WfNmGzvc9O-zHRtsLxX2NI_cJfQ5mlvFMm_FchdZKI8CpbIQhKPOCMDinsTC2Xat4wp0aDUWsFvjpAYz_1w4Mdl9C5M5J-gSqkqd-71WGhsnun4QkQVZOM");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Ghee</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Pure and rich clarified butter</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5iKr6GOezwDSlbKqd3g6udU-E7bht2AWqiOr87VqT4-6oIO3ID0uW90tChHOQmzkDY6YYMIbgzy163Rp5RiCdwLQkGCLp7TTuYW2Nn49QCJcOkUakH_O5HxZ0veZG01liIn1GdSvCc9WcF_8UON4DNr7lQhn2jbGdSNqC-OkyZ-KVo-ob8yzkBBGzlCEZ3j4gpZoVhGvXlD0aSjMJXM6Dogc2IHChyemU0J-yi90e6FMpkcMe0GPrGroK3jO4CVRC1vI25UaAnXw");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Masala Chai</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Traditional spiced tea blend</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcBCtbnFU1539Qj-toTAXPcyO3nQ3LCyUp7TCD1lGicsHj8VImaL5ofF8YD8maCES3lBmDt-vP0B6NGDIXB5Y47rbMh7uSJxn4cWC0qY_Y9qnNHWSx7bfyhIIYW_rXY4Ild8_YJ5FFWA2jr3h0WA8EcQF_Gsneg7mEbRZCcLA0AhXbnVbAA2stUpV2i-CuRy1sv_KdH_FAZDvpVR3LorHGxfEofIToPkVUEGHypORvQI4AWQNYMdGWMMx4kUKfu3RofUUjzo63vNk");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Pickles</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Tangy and spicy pickles</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAT3VViOH8LLlrWyVH6QTa5xbyajjpymoPwnmWISUa1kbX3ZRyFz34kwukKRuhryNN9rCAvaFaqgFFOReIM2svsk9XKJ0TOiljw6SdQm_6w2rf3uHqpmC3nLgtuUmYPIaysmrj9fPXj3ioV6VHw9ifZPXBOGv__hUCYZq0KGrx31ZbnwbWk8WLXd3r0jiENEu1FM49CGQx2mjylE6HyPKizoPWHn25wg5oWJZIJD1LFHBjdU6bY-Gwy63jxx3nV41mjv_tyhRRrlDo");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Indian Sweets</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Delicious traditional sweets</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCEWMbeJ5c4YJzd2M4YZW6uuXHIm5w1El-Az2IMXPm_Ahl5P4ZNaz0u0LxttbvcHKhl-oQY1h7tx8jlgvWdCr0wIkyzfwji4k-xD8feX70YN_NC7k-JctCvpkU4e9tc7YbbMSzh6twMwWSo0IuOmYbsx0IRFHyL_5xqfm-gBHg3uSeh8wS05FSnup0Oitr3Ay6ZjlixVos-nRe2BG8ZN7rsdF7UJLqqMZ8vENT5rOm97rYwvGWAOxltOj8KIdXBZReorqe5N6hP30Q");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Instant Noodles</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Quick and easy noodle meals</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAa47neRSNIxtek_jVfnYuMiVWlIAzunQD1iAtoLT4_IuXcWD3RXPQHH-6Ey_0wSynA2qd6Eo2kXJbLUZNiaxXXIOIReb2lWKd_NyfUVC1Q68ePljv2CNITSO9RgtM6-eCRyq1Zn1pei-x_RXLET9_XnYl5BPS-ca0gy2jRopYAgi5poH1nioKAq3kcb7b5jdemRUl4sWWsO5xQDWwXkqr9NWVwfDLFixGV-3Svk1e__eLP_LWbh1EoI0zivIGkGbcVLt-E3aAtcxQ");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Cooking Oils</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Variety of cooking oils</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoOZylr2cv1HjNn1p9PxoBsz0Ffnklok0TnWwz8L6lx7NRjAJd0HeDqp64U9j3rX-7heZlFCdVjaDW1mNDtob0dMowM9fyz6588CpPSma-7BXryM6dU8BdJUQwL9Yy3uLmLnkjB67dCswNqg_KpxfwHMk8pLz6__OnWwZ4pFbsNiyRhr6kV5NJMzF_7TQ0ufdr8Ccsn93GvuZ8z2cbHLjIiVVB7vmvdrgE8XATv0aRYfKFidw8A7qwxqIaE4ezSGktV_TrOG4_TKE");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Flours</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Different types of flours</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBT1MK0Q8DX08bczcPzylpScJsVq2VerFyw8WE3bl_iWzZUGVN0u3c1_RlA1eHw55IqTM688UX22hqnIylUvx7XGGauzxhruu1wBHRwfzl3YXPYABiaxRmfUhLbTOUffm9SyDfAGt7DLLiRLJGbXJKaq4kwUdfE-ydVO3VnelFHs8onLF1QccxIZfzXSnJ-LsyJPHpFqIaDAVcOeOdNGCxeJhNGK9mgyADC7iBS7subTzVgwJCW_UTqW55GktGedTyww-8_vFiwFpM");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Ready-to-Eat Meals</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Convenient ready-to-eat options</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDcNr5LMs266rEeF1JRzvBeOYi-TdYjNPEde-nvigdgZj5hNBNj-ocC7WD-WC_JnC8cHVzecOxSAl8N2EDkvSBWCMFCx34Q03ZjEyk-iOwssAF-t9vKdpxvlF9s1pBatD8sga7wgB310QnFq6gTyHZbXLIiGzBzOZbrDljh3KO8r4kwwNGzhkdJqZo8r52ExM635Kx2Zo1GmeHNset0aQgvzAplFBBl4Eu-E-8uRiS5GR3Vp8KZV0BenkYqyWBdv01XvUtTMVoWMqI");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Snack Mixes</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Savory and crunchy snack mixes</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCv5KxI1F7kpjo0vuozwcRAGfexkPfZxkkwCBPQG-jcX6eYTqLVmtYzQnwmTjSTDanbW-uVo2-_K8vXHU3q8Lp46K8FtbF1rHS_HNRvIMaukoKwammnZiO2slc1nOonlniSvgJV10mKnKRWgsct7gZJmTVL4hiMJ5IL6vPkq6NQjlc1-fgmYCONUukkMGlpCoTD6PiATxH0cdO0vW8FTgFO5r0sMmVA420KIoweMsVSjC4byX0nG_tGYzci5QYRrkEFfFMVuN9Aw_o");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Spices</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Wide range of aromatic spices</p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 pb-3">
+                <div
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDXWPxLYn94gUgYGTBgIvqLK0ffJAiQj6S3ROxLEYpQlfA7MehyXpWTsbZaNsG2wbU55LFoK0o-SxkFvZktPf0WN8Dekhn4QgO22tHUJt8niK__j1-DPOORz-9gV9CQRQO0P4pw-7nQkEbesLGrNADNncFZgaPPxEaW3eOjEv6W_8YTmnCu3RUsDT-9w50OBcWHLtRAbulC8GoXUchFl3snXsWY4rMUtkReOgO77elIKyZAyJtpLBuyhegr5mroUSCYsht5l8i5iXI");'
+                ></div>
+                <div>
+                  <p class="text-[#181411] text-base font-medium leading-normal">Lentils</p>
+                  <p class="text-[#8a7260] text-sm font-normal leading-normal">Various types of lentils</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- footer -->
+    {% include 'navigations/footer.html'%}
+
+      </div>
+    </div>
+  </body>
+</html>

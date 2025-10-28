@@ -1,5 +1,5 @@
 from flask import Blueprint, session, jsonify, request, render_template
-from src.database.db_json import category
+from src.database.product_catelog import category
 
 error_bp = Blueprint('error_bp', __name__, static_folder='static', template_folder='templates')
 
