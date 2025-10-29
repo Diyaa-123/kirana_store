@@ -1,51 +1,92 @@
 <html>
   <head>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <!-- Load Google Fonts -->
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Stitch Design</title>
+    <title>Desi Delights - Order Confirmation</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
+    <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   </head>
   <body>
-    <div class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Work Sans", "Noto Sans", sans-serif;'>
+    <!-- Main page container -->
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden"
+      style='font-family: "Work Sans", "Noto Sans", sans-serif;'
+    >
       <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1f4f0] px-10 py-3">
+        <!-- Header Section -->
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-gray-200 px-10 py-3"
+        >
+          <!-- Logo and Navigation -->
           <div class="flex items-center gap-8">
-            <div class="flex items-center gap-4 text-[#131811]">
-              <div class="size-4">
-                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div class="flex items-center gap-4 text-gray-900">
+              <div class="size-4 text-orange-600">
+                <!-- Logo SVG -->
+                <svg
+                  viewBox="0 0 48 48"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
                     d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z"
                     fill="currentColor"
                   ></path>
                 </svg>
               </div>
-              <h2 class="text-[#131811] text-lg font-bold leading-tight tracking-[-0.015em]">Desi Delights</h2>
+              <h2
+                class="text-gray-900 text-lg font-bold leading-tight tracking-[-0.015em]"
+              >
+                Desi Delights
+              </h2>
             </div>
+            <!-- Nav Links -->
             <div class="flex items-center gap-9">
-              <a class="text-[#131811] text-sm font-medium leading-normal" href="#">Home</a>
-              <a class="text-[#131811] text-sm font-medium leading-normal" href="#">Shop</a>
-              <a class="text-[#131811] text-sm font-medium leading-normal" href="#">Offers</a>
-              <a class="text-[#131811] text-sm font-medium leading-normal" href="#">Contact</a>
+              <a
+                class="text-gray-700 hover:text-orange-600 text-sm font-medium leading-normal"
+                href="#"
+                >Home</a
+              >
+              <a
+                class="text-gray-700 hover:text-orange-600 text-sm font-medium leading-normal"
+                href="#"
+                >Shop</a
+              >
+              <a
+                class="text-gray-700 hover:text-orange-600 text-sm font-medium leading-normal"
+                href="#"
+                >Offers</a
+              >
+              <a
+                class="text-gray-700 hover:text-orange-600 text-sm font-medium leading-normal"
+                href="#"
+                >Contact</a
+              >
             </div>
           </div>
+          <!-- Search, Actions, and Profile -->
           <div class="flex flex-1 justify-end gap-8">
+            <!-- Search Bar -->
             <label class="flex flex-col min-w-40 !h-10 max-w-64">
               <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
                 <div
-                  class="text-[#6b8961] flex border-none bg-[#f1f4f0] items-center justify-center pl-4 rounded-l-lg border-r-0"
-                  data-icon="MagnifyingGlass"
-                  data-size="24px"
-                  data-weight="regular"
+                  class="text-gray-500 flex border-none bg-gray-100 items-center justify-center pl-4 rounded-l-lg border-r-0"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24px"
+                    height="24px"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                  >
                     <path
                       d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"
                     ></path>
@@ -53,17 +94,24 @@
                 </div>
                 <input
                   placeholder="Search"
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#131811] focus:outline-0 focus:ring-0 border-none bg-[#f1f4f0] focus:border-none h-full placeholder:text-[#6b8961] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
+                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-900 focus:outline-0 focus:ring-0 border-none bg-gray-100 focus:border-none h-full placeholder:text-gray-500 px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal"
                   value=""
                 />
               </div>
             </label>
+            <!-- Action Buttons -->
             <div class="flex gap-2">
               <button
-                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f1f4f0] text-[#131811] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-100 hover:bg-gray-200 text-gray-700 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
               >
-                <div class="text-[#131811]" data-icon="Heart" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <div class="text-gray-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                  >
                     <path
                       d="M178,32c-20.65,0-38.73,8.88-50,23.89C116.73,40.88,98.65,32,78,32A62.07,62.07,0,0,0,16,94c0,70,103.79,126.66,108.21,129a8,8,0,0,0,7.58,0C136.21,220.66,240,164,240,94A62.07,62.07,0,0,0,178,32ZM128,206.8C109.74,196.16,32,147.69,32,94A46.06,46.06,0,0,1,78,48c19.45,0,35.78,10.36,42.6,27a8,8,0,0,0,14.8,0c6.82-16.67,23.15-27,42.6-27a46.06,46.06,0,0,1,46,46C224,147.61,146.24,196.15,128,206.8Z"
                     ></path>
@@ -71,10 +119,16 @@
                 </div>
               </button>
               <button
-                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-[#f1f4f0] text-[#131811] gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
+                class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-100 hover:bg-gray-200 text-gray-700 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5"
               >
-                <div class="text-[#131811]" data-icon="ShoppingCart" data-size="20px" data-weight="regular">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
+                <div class="text-gray-700">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    fill="currentColor"
+                    viewBox="0 0 256 256"
+                  >
                     <path
                       d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
                     ></path>
@@ -82,102 +136,249 @@
                 </div>
               </button>
             </div>
+            <!-- Profile Image -->
             <div
               class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
               style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZlZrL40Buudflq1OZVUvith32gmRsbrOCEF4Hua9qQkpmOv_I3mhF_onyjaWmVNad9DcmP-t__7bY5Wl4Mhvu5wbZzDbcTjrerNhX_H1mtjpmlXBHCDJTHsX-NuQDiKiS3urKs26fViQC79YGb4ASSdveaPx8QO3I688HSbu5E_mUKBXiy2X_je_QkY-0uXLZZliE8hhKB2G8wFXfYyTdzl_LQEd2rGIHTFuq7dRai5WHy-ZfyO6ZhX8PMN0NT3DEip5vc4cHcDg");'
             ></div>
           </div>
         </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+        <!-- Main Content Area -->
+        <div class="px-40 flex flex-1 justify-center py-5 bg-gray-50/50">
+          <!-- Content Container -->
+          <div
+            class="layout-content-container flex flex-col max-w-[960px] flex-1 bg-white border border-gray-200 rounded-lg shadow-sm"
+          >
+            <!-- Order Placed Header -->
             <div class="flex flex-wrap justify-between gap-3 p-4">
               <div class="flex min-w-72 flex-col gap-3">
-                <p class="text-[#131811] tracking-light text-[32px] font-bold leading-tight">Order Placed Successfully!</p>
-                <p class="text-[#6b8961] text-sm font-normal leading-normal">Your order has been placed and is being processed. You will receive an email confirmation shortly.</p>
+                <p
+                  class="text-gray-900 tracking-light text-[32px] font-bold leading-tight"
+                >
+                  Order Placed Successfully!
+                </p>
+                <p class="text-gray-600 text-sm font-normal leading-normal">
+                  Your order has been placed and is being processed. You will
+                  receive an email confirmation shortly.
+                </p>
               </div>
             </div>
-            <h3 class="text-[#131811] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Order Details</h3>
+            <!-- Order Details -->
+            <h3
+              class="text-gray-900 text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
+            >
+              Order Details
+            </h3>
             <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dee6db] py-5">
-                <p class="text-[#6b8961] text-sm font-normal leading-normal">Order Number</p>
-                <p class="text-[#131811] text-sm font-normal leading-normal">#123456789</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 py-5"
+              >
+                <p class="text-gray-600 text-sm font-normal leading-normal">
+                  Order Number
+                </p>
+                <p class="text-gray-900 text-sm font-normal leading-normal">
+                  #123456789
+                </p>
               </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dee6db] py-5">
-                <p class="text-[#6b8961] text-sm font-normal leading-normal">Order Date</p>
-                <p class="text-[#131811] text-sm font-normal leading-normal">July 26, 2024</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 py-5"
+              >
+                <p class="text-gray-600 text-sm font-normal leading-normal">
+                  Order Date
+                </p>
+                <p class="text-gray-900 text-sm font-normal leading-normal">
+                  July 26, 2024
+                </p>
               </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dee6db] py-5">
-                <p class="text-[#6b8961] text-sm font-normal leading-normal">Estimated Delivery</p>
-                <p class="text-[#131811] text-sm font-normal leading-normal">July 28, 2024, 10:00 AM - 12:00 PM</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 py-5"
+              >
+                <p class="text-gray-600 text-sm font-normal leading-normal">
+                  Estimated Delivery
+                </p>
+                <p class="text-gray-900 text-sm font-normal leading-normal">
+                  July 28, 2024, 10:00 AM - 12:00 PM
+                </p>
               </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dee6db] py-5">
-                <p class="text-[#6b8961] text-sm font-normal leading-normal">Payment Method</p>
-                <p class="text-[#131811] text-sm font-normal leading-normal">Credit Card</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 py-5"
+              >
+                <p class="text-gray-600 text-sm font-normal leading-normal">
+                  Payment Method
+                </p>
+                <p class="text-gray-900 text-sm font-normal leading-normal">
+                  Credit Card
+                </p>
               </div>
             </div>
-            <h3 class="text-[#131811] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Order Summary</h3>
+            <!-- Order Summary -->
+            <h3
+              class="text-gray-900 text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
+            >
+              Order Summary
+            </h3>
             <div class="px-4 py-3 @container">
-              <div class="flex overflow-hidden rounded-lg border border-[#dee6db] bg-white">
+              <div
+                class="flex overflow-hidden rounded-lg border border-gray-200 bg-white"
+              >
                 <table class="flex-1">
                   <thead>
-                    <tr class="bg-white">
-                      <th class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-120 px-4 py-3 text-left text-[#131811] w-[400px] text-sm font-medium leading-normal">Item</th>
-                      <th class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-240 px-4 py-3 text-left text-[#131811] w-[400px] text-sm font-medium leading-normal">
+                    <tr class="bg-gray-50">
+                      <th
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-120 px-4 py-3 text-left text-gray-700 w-[400px] text-sm font-medium leading-normal"
+                      >
+                        Item
+                      </th>
+                      <th
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-240 px-4 py-3 text-left text-gray-700 w-[400px] text-sm font-medium leading-normal"
+                      >
                         Quantity
                       </th>
-                      <th class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-360 px-4 py-3 text-left text-[#131811] w-[400px] text-sm font-medium leading-normal">Price</th>
+                      <th
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-360 px-4 py-3 text-left text-gray-700 w-[400px] text-sm font-medium leading-normal"
+                      >
+                        Price
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="border-t border-t-[#dee6db]">
-                      <td class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-120 h-[72px] px-4 py-2 w-[400px] text-[#131811] text-sm font-normal leading-normal">
+                    <tr class="border-t border-t-gray-200">
+                      <td
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-120 h-[72px] px-4 py-2 w-[400px] text-gray-900 text-sm font-normal leading-normal"
+                      >
                         Basmati Rice
                       </td>
-                      <td class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-240 h-[72px] px-4 py-2 w-[400px] text-[#6b8961] text-sm font-normal leading-normal">2 kg</td>
-                      <td class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-360 h-[72px] px-4 py-2 w-[400px] text-[#6b8961] text-sm font-normal leading-normal">$12.00</td>
+                      <td
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-240 h-[72px] px-4 py-2 w-[400px] text-gray-600 text-sm font-normal leading-normal"
+                      >
+                        2 kg
+                      </td>
+                      <td
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-360 h-[72px] px-4 py-2 w-[400px] text-gray-600 text-sm font-normal leading-normal"
+                      >
+                        ₹12.00
+                      </td>
                     </tr>
-                    <tr class="border-t border-t-[#dee6db]">
-                      <td class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-120 h-[72px] px-4 py-2 w-[400px] text-[#131811] text-sm font-normal leading-normal">
+                    <tr class="border-t border-t-gray-200">
+                      <td
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-120 h-[72px] px-4 py-2 w-[400px] text-gray-900 text-sm font-normal leading-normal"
+                      >
                         Masala Chai
                       </td>
-                      <td class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-240 h-[72px] px-4 py-2 w-[400px] text-[#6b8961] text-sm font-normal leading-normal">1 pack</td>
-                      <td class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-360 h-[72px] px-4 py-2 w-[400px] text-[#6b8961] text-sm font-normal leading-normal">$5.00</td>
+                      <td
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-240 h-[72px] px-4 py-2 w-[400px] text-gray-600 text-sm font-normal leading-normal"
+                      >
+                        1 pack
+                      </td>
+                      <td
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-360 h-[72px] px-4 py-2 w-[400px] text-gray-600 text-sm font-normal leading-normal"
+                      >
+                        ₹5.00
+                      </td>
                     </tr>
-                    <tr class="border-t border-t-[#dee6db]">
-                      <td class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-120 h-[72px] px-4 py-2 w-[400px] text-[#131811] text-sm font-normal leading-normal">Ghee</td>
-                      <td class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-240 h-[72px] px-4 py-2 w-[400px] text-[#6b8961] text-sm font-normal leading-normal">500g</td>
-                      <td class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-360 h-[72px] px-4 py-2 w-[400px] text-[#6b8961] text-sm font-normal leading-normal">$8.00</td>
+                    <tr class="border-t border-t-gray-200">
+                      <td
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-120 h-[72px] px-4 py-2 w-[400px] text-gray-900 text-sm font-normal leading-normal"
+                      >
+                        Ghee
+                      </td>
+                      <td
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-240 h-[72px] px-4 py-2 w-[4------------------
+---
+layout: default
+title: My Blog
+---
+
+<h1>Latest Posts</h1>
+
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p>{{ post.excerpt }}</p>
+      <p>{{ post.date | date: "%B %d, %Y" }}</p>
+    </li>
+  {% endfor %}
+</ul>
+0px] text-gray-600 text-sm font-normal leading-normal"
+                      >
+                        500g
+                      </td>
+                      <td
+                        class="table-53a07d85-017e-45dd-b72b-f85da7b29580-column-360 h-[72px] px-4 py-2 w-[400px] text-gray-600 text-sm font-normal leading-normal"
+                      >
+                        ₹8.00
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
+              <!-- Responsive table styles -->
               <style>
-                          @container(max-width:120px){.table-53a07d85-017e-45dd-b72b-f85da7b29580-column-120{display: none;}}
-                @container(max-width:240px){.table-53a07d85-017e-45dd-b72b-f85da7b29580-column-240{display: none;}}
-                @container(max-width:360px){.table-53a07d85-017e-45dd-b72b-f85da7b29580-column-360{display: none;}}
+                @container(max-width:120px) {
+                  .table-53a07d85-017e-45dd-b72b-f85da7b29580-column-120 {
+                    display: none;
+                  }
+                }
+                @container(max-width:240px) {
+                  .table-53a07d85-017e-45dd-b72b-f85da7b29580-column-240 {
+                    display: none;
+                  }
+                }
+                @container(max-width:360px) {
+                  .table-53a07d85-017e-45dd-b72b-f85da7b29580-column-360 {
+                    display: none;
+                  }
+                }
               </style>
             </div>
+            <!-- Totals Section -->
             <div class="p-4 grid grid-cols-[20%_1fr] gap-x-6">
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dee6db] py-5">
-                <p class="text-[#6b8961] text-sm font-normal leading-normal">Subtotal</p>
-                <p class="text-[#131811] text-sm font-normal leading-normal">$25.00</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 py-5"
+              >
+                <p class="text-gray-600 text-sm font-normal leading-normal">
+                  Subtotal
+                </p>
+                <p class="text-gray-900 text-sm font-normal leading-normal">
+                  ₹25.00
+                </p>
               </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dee6db] py-5">
-                <p class="text-[#6b8961] text-sm font-normal leading-normal">Shipping</p>
-                <p class="text-[#131811] text-sm font-normal leading-normal">$5.00</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 py-5"
+              >
+                <p class="text-gray-600 text-sm font-normal leading-normal">
+                  Shipping
+                </p>
+                <p class="text-gray-900 text-sm font-normal leading-normal">
+                  ₹5.00
+                </p>
               </div>
-              <div class="col-span-2 grid grid-cols-subgrid border-t border-t-[#dee6db] py-5">
-                <p class="text-[#6b8961] text-sm font-normal leading-normal">Total</p>
-                <p class="text-[#131811] text-sm font-normal leading-normal">$30.00</p>
+              <div
+                class="col-span-2 grid grid-cols-subgrid border-t border-t-gray-200 py-5"
+              >
+                <p class="text-gray-700 text-sm font-bold leading-normal">
+                  Total
+                </p>
+                <p
+                  class="text-orange-600 text-sm font-bold leading-normal"
+                >
+                  ₹30.00
+                </p>
               </div>
             </div>
-            <p class="text-[#131811] text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">
-              Thank you for shopping with Desi Delights! We appreciate your business and hope you enjoy your order. For any questions or concerns, please contact our customer
-              support.
+            <!-- Footer Message -->
+            <p
+              class="text-gray-700 text-base font-normal leading-normal pb-3 pt-1 px-4 text-center"
+            >
+              Thank you for shopping with Desi Delights! We appreciate your
+              business and hope you enjoy your order. For any questions or
+              concerns, please contact our customer support.
             </p>
+            <!-- View Order Button -->
             <div class="flex px-4 py-3 justify-center">
               <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#46ec13] text-[#131811] text-sm font-bold leading-normal tracking-[0.015em]"
+                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-orange-600 text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-orange-700 transition-colors"
               >
                 <span class="truncate">View Order Details</span>
               </button>

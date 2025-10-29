@@ -1,98 +1,391 @@
 <html>
   <head>
-    <title>New Arrivals | GrapeStore</title>
+    <title>New Arrivals | Desi Delights</title>
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+    
+    <!-- Load Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <link
+      rel="stylesheet"
+      as="style"
+      onload="this.rel='stylesheet'"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
+    />
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <!-- Base head include (from original code) -->
     {% include 'base_head.html' %}
   </head>
-  <body>
-  <div class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden">
+  <body
+    style='font-family: "Work Sans", "Noto Sans", sans-serif;'
+  >
+    <div
+      class="relative flex h-auto min-h-screen w-full flex-col bg-white group/design-root overflow-x-hidden"
+    >
       <div class="flex flex-wrap h-full grow flex-col">
-    
         <!-- header -->
-    {% include 'navigations/header.html' %}
+        {% include 'navigations/header.html' %}
 
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-[#131811] tracking-light text-[32px] font-bold leading-tight min-w-72">New Arrivals</p></div>
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-col gap-3 pb-3">
+        <!-- Main Content Area -->
+        <div class="px-40 flex flex-1 justify-center py-5 bg-gray-50/50">
+          <!-- Content Container -->
+          <div
+            class="layout-content-container flex flex-col max-w-[960px] flex-1 bg-white border border-gray-200 rounded-lg shadow-sm"
+          >
+            <div class="flex flex-wrap justify-between gap-3 p-4">
+              <p
+                class="text-gray-900 tracking-light text-[32px] font-bold leading-tight min-w-72"
+              >
+                New Arrivals
+              </p>
+            </div>
+            <!-- Product Grid -->
+            <div
+              class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-4 p-4"
+            >
+              <!-- Product Card 1 -->
+              <div
+                class="flex flex-col border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+              >
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-lg"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTzK1xK2FXi_7OOFXCsxc8DKn5esxMT84KHDsCFKY-xLcpQnZv6jkl1erj8cGM2RufudTKPSP-X_HlcphAXYHgMoSJG6fuk4hyT9Io6_qXVaYkL3lFLkyZUKgdI_dE-rdW4_VsUOJToUIuv23A41gqqW7oAL_QFv7jd48QDPLTM3VhKG2WiVXMwoIj3A6JTlYQSkpAjhL9i_50sQPwzP5S4peMemnCzl1P0LHEXHv2qro8z2hoTqNtqEDj3PwOlWVvsdmzi1xgBQI");'
                 ></div>
-                <div>
-                  <p class="text-[#131811] text-base font-medium leading-normal">Premium Basmati Rice</p>
-                  <p class="text-[#6b8961] text-sm font-normal leading-normal">Finest quality, aromatic rice</p>
+                <!-- Content -->
+                <div class="p-3 flex flex-col gap-2 flex-grow">
+                  <!-- Title/Description part (fills available space) -->
+                  <div class="flex-grow">
+                    <p
+                      class="text-gray-900 text-base font-medium leading-normal"
+                    >
+                      Premium Basmati Rice
+                    </p>
+                    <p class="text-gray-600 text-sm font-normal leading-normal">
+                      1 kg
+                    </p>
+                  </div>
+                  <!-- Price/Button part (stays at bottom) -->
+                  <div class="flex justify-between items-center mt-2">
+                    <p class="text-orange-600 font-bold text-base">₹120</p>
+                    <button
+                      class="flex items-center gap-1 bg-orange-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-orange-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                        ></path>
+                      </svg>
+                      <span>Add</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <!-- Product Card 2 -->
+              <div
+                class="flex flex-col border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+              >
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-lg"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCi0sXIyUIJ8RmuvwWDumgnYLJx8p0uEGnWbortxVFgHNKqJk_NAsibLApL3g46R6WNMP2-52ogxVzmYA_LPAL93ErU_ZTpBULliE2AcRLCP9cJBk4KeQZW2DABGTzCvnaUAH83K7jP73L25NV_38wvY7ZDIIp0xxwxabgEjBHY4qynFOscjmU7IGBNZJJUE22ZPeUrzVouJe6hTbM9jrP-DYL4vd38xVv0vHxiMtBC8sUEc8iMxp905ss_ljZwsDJi8gOexeQ51P0");'
                 ></div>
-                <div>
-                  <p class="text-[#131811] text-base font-medium leading-normal">Organic Turmeric Powder</p>
-                  <p class="text-[#6b8961] text-sm font-normal leading-normal">Pure, unadulterated turmeric</p>
+                <!-- Content -->
+                <div class="p-3 flex flex-col gap-2 flex-grow">
+                  <!-- Title/Description part (fills available space) -->
+                  <div class="flex-grow">
+                    <p
+                      class="text-gray-900 text-base font-medium leading-normal"
+                    >
+                      Organic Turmeric Powder
+                    </p>
+                    <p class="text-gray-600 text-sm font-normal leading-normal">
+                      200 gm
+                    </p>
+                  </div>
+                  <!-- Price/Button part (stays at bottom) -->
+                  <div class="flex justify-between items-center mt-2">
+                    <p class="text-orange-600 font-bold text-base">₹40</p>
+                    <button
+                      class="flex items-center gap-1 bg-orange-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-orange-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                        ></path>
+                      </svg>
+                      <span>Add</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <!-- Product Card 3 -->
+              <div
+                class="flex flex-col border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+              >
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-lg"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBhcezHBg1tvwl5cMCCGbsUvILJ1w-iNDM9z4DkWX0xwpIIjClCb0qsW9zlBwpEL5wDvqWULODJN_U8Or5le7Pjqc-JmJoadMTAHONF7o1mmfc_tz4FYnsEX-BoRIFx5k6xcWH5dCp_CcTGaFX5dO4ld8kryyBfbYFq01HUXz2-kY9IaSF7BoBvDeaXA9iSWDuCVMak0m6znkGpjeEU4ccEUTTwc4zXnFvScSvzCqk6vAK7Y34DXTk-bS0WX5gQ_A_7KDxbvFj6aUs");'
                 ></div>
-                <div>
-                  <p class="text-[#131811] text-base font-medium leading-normal">Fresh Curry Leaves</p>
-                  <p class="text-[#6b8961] text-sm font-normal leading-normal">Fragrant leaves for curries</p>
+                <!-- Content -->
+                <div class="p-3 flex flex-col gap-2 flex-grow">
+                  <!-- Title/Description part (fills available space) -->
+                  <div class="flex-grow">
+                    <p
+                      class="text-gray-900 text-base font-medium leading-normal"
+                    >
+                      Fresh Curry Leaves
+                    </p>
+                    <p class="text-gray-600 text-sm font-normal leading-normal">
+                      1 bunch
+                    </p>
+                  </div>
+                  <!-- Price/Button part (stays at bottom) -->
+                  <div class="flex justify-between items-center mt-2">
+                    <p class="text-orange-600 font-bold text-base">₹20</p>
+                    <button
+                      class="flex items-center gap-1 bg-orange-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-orange-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                        ></path>
+                      </svg>
+                      <span>Add</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <!-- Product Card 4 -->
+              <div
+                class="flex flex-col border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+              >
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-lg"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuASAtmLarGiNv1-7OKXUk7ytjui4zni5LVPg4aMU1HctfjEpjYHdQ5huywF0oj17jeUAC-m3biKdU5veGszLPBB-L10ZMLmYMWqw-6LxOmXY4dM3gRXWpwthFYem6hehOlIOdsg-CXhYI7el3bGWGizJjkRqsk15VZCLsG2j396PnkuxiRujSfUIshCkx1u1YPkADJA7TYBCn9bjt2jzj9u0xP1n9v91QXt4Io2dAKiVNXGx_TvHhEJIGxvgyFcC2jiO4UE5gW5U5s");'
                 ></div>
-                <div>
-                  <p class="text-[#131811] text-base font-medium leading-normal">Authentic Ghee</p>
-                  <p class="text-[#6b8961] text-sm font-normal leading-normal">Clarified butter, rich flavor</p>
+                <!-- Content -->
+                <div class="p-3 flex flex-col gap-2 flex-grow">
+                  <!-- Title/Description part (fills available space) -->
+                  <div class="flex-grow">
+                    <p
+                      class="text-gray-900 text-base font-medium leading-normal"
+                    >
+                      Authentic Ghee
+                    </p>
+                    <p class="text-gray-600 text-sm font-normal leading-normal">
+                      500 gm
+                    </p>
+                  </div>
+                  <!-- Price/Button part (stays at bottom) -->
+                  <div class="flex justify-between items-center mt-2">
+                    <p class="text-orange-600 font-bold text-base">₹350</p>
+                    <button
+                      class="flex items-center gap-1 bg-orange-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-orange-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                        ></path>
+                      </svg>
+                      <span>Add</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <!-- Product Card 5 -->
+              <div
+                class="flex flex-col border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+              >
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDWCGmnG4EawrTUu7vFczbr30og6nlmsXp6GVCQ83K-3PSvAfBjdL_oscq4ju1OqoEW6zMZkr-_RTcO-A2ckCVNygObW5en6vo7d6snUdwAZVDj36G64jY4kkbgXBbg3o9O46AUiNe1x8FCXgvIVYKkUiu-XHue2VRUZwMg9omiJLMx84bdff1a2ZhMCDu3hp9MoK2YGOt5z6o_AxdC8MW8woe4g16SzOVffq0o9inBziP1zOd95RzYb-gSeWB7HFLZRPGWSpfewHU");'
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-lg"
+                  style='background-image: url("https://via.placeholder.com/400");'
                 ></div>
-                <div>
-                  <p class="text-[#131811] text-base font-medium leading-normal">Spicy Mango Pickle</p>
-                  <p class="text-[#6b8961] text-sm font-normal leading-normal">Tangy and spicy mango pickle</p>
+                <!-- Content -->
+                <div class="p-3 flex flex-col gap-2 flex-grow">
+                  <!-- Title/Description part (fills available space) -->
+                  <div class="flex-grow">
+                    <p
+                      class="text-gray-900 text-base font-medium leading-normal"
+                    >
+                      Spicy Mango Pickle
+                    </p>
+                    <p class="text-gray-600 text-sm font-normal leading-normal">
+                      300 gm
+                    </p>
+                  </div>
+                  <!-- Price/Button part (stays at bottom) -->
+                  <div class="flex justify-between items-center mt-2">
+                    <p class="text-orange-600 font-bold text-base">₹80</p>
+                    <button
+                      class="flex items-center gap-1 bg-orange-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-orange-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                        ></path>
+                      </svg>
+                      <span>Add</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <!-- Product Card 6 -->
+              <div
+                class="flex flex-col border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+              >
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-lg"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvnyz8ky_awOC8IvbbcwNOJjpPDjUyPzLlQhWOHKLyY9IPH7TJTg_Y-fEcK4Bb_MHaS2AWtp11t2q34bxeiGtxhcm2hGaOHPE3KXrkWMhF_kSy3JouPhssHzBlmbL9hs9Z3iN6YlV3Y2jnOR_fhhBb2ooJ6XTKIR6SRBWQWmpUxSPJ37jH6pHK5yNI3uDZP5yJXVnuF9IgwRZNDzdwKS7uQwWTWU6Jud31E3AgI9GTiOalbo6ipxWqMix4aGxuHyOF7tyyRgggRWY");'
                 ></div>
-                <div>
-                  <p class="text-[#131811] text-base font-medium leading-normal">Exotic Saffron Strands</p>
-                  <p class="text-[#6b8961] text-sm font-normal leading-normal">Premium saffron for cooking</p>
+                <!-- Content -->
+                <div class="p-3 flex flex-col gap-2 flex-grow">
+                  <!-- Title/Description part (fills available space) -->
+                  <div class="flex-grow">
+                    <p
+                      class="text-gray-900 text-base font-medium leading-normal"
+                    >
+                      Exotic Saffron Strands
+                    </p>
+                    <p class="text-gray-600 text-sm font-normal leading-normal">
+                      1 gm
+                    </p>
+                  </div>
+                  <!-- Price/Button part (stays at bottom) -->
+                  <div class="flex justify-between items-center mt-2">
+                    <p class="text-orange-600 font-bold text-base">₹450</p>
+                    <button
+                      class="flex items-center gap-1 bg-orange-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-orange-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                        ></path>
+                      </svg>
+                      <span>Add</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <!-- Product Card 7 -->
+              <div
+                class="flex flex-col border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+              >
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-lg"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9888ih3rVsKV15mnSnIX7VDYZrtVGJ6d0UdwgzCpBFKq_rM5W3ZcFAeSa-2ysMbAFm33kNTdofoe1fpfXyu5JspPrIuoSIrKmv6ywHjNMZ9-Z5K1Xmmu-JAf_cWe7j9-6WokszU8OINyNR7453aVEFeeBlCFIgk-bRQ-0DKGTZeAJtY37FHZ8P7lhT8EFDns9scjlDevzY0DU1DwdTy4cqT9WuqFly0Py_RgxXBMU_IL2llAgigCW7nqtzx6yAvSQ_Qyios_y3bM");'
                 ></div>
-                <div>
-                  <p class="text-[#131811] text-base font-medium leading-normal">Handmade Incense Sticks</p>
-                  <p class="text-[#6b8961] text-sm font-normal leading-normal">Hand-rolled, natural scents</p>
+                <!-- Content -->
+                <div class="p-3 flex flex-col gap-2 flex-grow">
+                  <!-- Title/Description part (fills available space) -->
+                  <div class="flex-grow">
+                    <p
+                      class="text-gray-900 text-base font-medium leading-normal"
+                    >
+                      Handmade Incense Sticks
+                    </p>
+                    <p class="text-gray-600 text-sm font-normal leading-normal">
+                      1 pack
+                    </p>
+                  </div>
+                  <!-- Price/Button part (stays at bottom) -->
+                  <div class="flex justify-between items-center mt-2">
+                    <p class="text-orange-600 font-bold text-base">₹50</p>
+                    <button
+                      class="flex items-center gap-1 bg-orange-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-orange-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                        ></path>
+                      </svg>
+                      <span>Add</span>
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <!-- Product Card 8 -->
+              <div
+                class="flex flex-col border border-gray-200 rounded-lg shadow-sm overflow-hidden"
+              >
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg"
-                  style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZnQx3bHXvMB0VHQ7R6pq63Rvax8qyk1uIIYMlAN1ThvTR4dwOIGjdcJ_JnRwtxnlFsaR7-Kb_2AUPjKChxqY3rYk7J1_DHXTTwLzal9tBeyLAv4ZwT5Ssmy1iwb6IlaP69zIvMSDKgwS8ob2OwJkPP8e0J1CX70A2db7Y2B1_kxkE-Sj3Bii7nDbYcliQAnaggLQuE_IOloBwKbwJOWEJ4P4QXjetgpo-A4C4MKx4g3WdfKSZrMas3kc2GacEXZ_KMenzfBbTUGg");'
+                  class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-t-lg"
+                  style='background-image: url("https://via.placeholder.com/400");'
                 ></div>
-                <div>
-                  <p class="text-[#131811] text-base font-medium leading-normal">Traditional Copper Water Bottle</p>
-                  <p class="text-[#6b8961] text-sm font-normal leading-normal">Ayurvedic copper bottle</p>
+                <!-- Content -->
+                <div class="p-3 flex flex-col gap-2 flex-grow">
+                  <!-- Title/Description part (fills available space) -->
+                  <div class="flex-grow">
+                    <p
+                      class="text-gray-900 text-base font-medium leading-normal"
+                    >
+                      Traditional Copper Water Bottle
+                    </p>
+                    <p class="text-gray-600 text-sm font-normal leading-normal">
+                      1 L
+                    </p>
+                  </div>
+                  <!-- Price/Button part (stays at bottom) -->
+                  <div class="flex justify-between items-center mt-2">
+                    <p class="text-orange-600 font-bold text-base">₹550</p>
+                    <button
+                      class="flex items-center gap-1 bg-orange-600 text-white px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-orange-700"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        fill="currentColor"
+                        viewBox="0 0 256 256"
+                      >
+                        <path
+                          d="M222.14,58.87A8,8,0,0,0,216,56H54.68L49.79,29.14A16,16,0,0,0,34.05,16H16a8,8,0,0,0,0,16h18L59.56,172.29a24,24,0,0,0,5.33,11.27,28,28,0,1,0,44.4,8.44h45.42A27.75,27.75,0,0,0,152,204a28,28,0,1,0,28-28H83.17a8,8,0,0,1-7.87-6.57L72.13,152h116a24,24,0,0,0,23.61-19.71l12.16-66.86A8,8,0,0,0,222.14,58.87ZM96,204a12,12,0,1,1-12-12A12,12,0,0,1,96,204Zm96,0a12,12,0,1,1-12-12A12,12,0,0,1,192,204Zm4-74.57A8,8,0,0,1,188.1,136H69.22L57.59,72H206.41Z"
+                        ></path>
+                      </svg>
+                      <span>Add</span>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -100,7 +393,8 @@
         </div>
       </div>
     </div>
-     <!-- footer -->
-    {% include 'navigations/footer.html'%}
+    <!-- footer -->
+    {% include 'navigations/footer.html' %}
   </body>
 </html>
+
